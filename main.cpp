@@ -21,7 +21,7 @@ const double learning_rate = 1e-3;
 const double epsilon = 1e-3;
 const double momentum = 0.9;
 
-mt19937_64 g(0);
+mt19937_64 g(chrono::steady_clock::now().time_since_epoch().count());
 double randf(double l, double r){return uniform_real_distribution<double>(l, r)(g);}
 
 vector<vector<double>> image(width + 1, vector<double>(height + 1));
